@@ -5,38 +5,38 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Linting') {
             steps {
-                sh 'npm run lint'
+                bat 'npm run lint'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build Project') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Deploy Application') {
             steps {
-                sh 'rm -rf /var/www/react-app/*'
-                sh 'cp -r build/* /var/www/react-app/'
+                bat 'rm -rf /var/www/react-app/*'
+                bat 'cp -r build/* /var/www/react-app/'
             }
         }
 
         stage('Post-Deployment Test') {
             steps {
-                sh 'curl -I http://localhost'
+                bat 'curl -I http://localhost'
             }
         }
     }
