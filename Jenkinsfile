@@ -1,17 +1,7 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_HOME = tool 'NodeJS'
-        PATH = "${NODE_HOME}/bin:${env.PATH}"
-    }
-
     stages {
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main', url: 'https://github.com/BlazingNish/jenkins-react-pipeline.git'
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
