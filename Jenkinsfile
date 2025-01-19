@@ -23,8 +23,8 @@ pipeline {
 
         stage('Deploy Application') {
             steps {
-                bat 'rm -rf /var/www/react-app/*'
-                bat 'xcopy build C:\deployments\my-react-app /E /I /H /Y'
+                bat 'rmdir /s /q C:\\path\\to\\deployment\\folder'
+                bat 'xcopy build C:\\path\\to\\deployment\\folder /E /I /Y'
             }
         }
 
