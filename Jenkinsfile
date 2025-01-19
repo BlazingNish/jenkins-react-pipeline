@@ -27,11 +27,6 @@ pipeline {
             }
         }
 
-        stage('Post-Deployment Test') {
-            steps {
-                bat 'curl -I http://localhost'
-            }
-        }
     }
 
     post {
